@@ -23,11 +23,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Identify to git
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git config --global credential.helper wincred
     - run: npm ci
     - run: npm run build
     - name: Deploy to gh-pages
